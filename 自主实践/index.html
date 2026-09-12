@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图书收藏管理</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: sans-serif; max-width: 560px; margin: 24px auto; padding: 0 16px; }
+    .form-row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+    input[type="text"], input[type="number"] {
+      padding: 6px 8px; border: 1px solid #bbb; border-radius: 4px; font-size: 14px;
+    }
+    #book-title { flex: 2; min-width: 140px; }
+    #book-author { flex: 1; min-width: 100px; }
+    #book-rating { width: 96px; }
+    button { cursor: pointer; padding: 6px 12px; border: none; border-radius: 4px; background: #2d7ff9; color: #fff; font-size: 14px; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 8px 6px; border-bottom: 1px solid #eee; cursor: pointer; }
+    li.done { text-decoration: line-through; color: #999; }
+    .del { margin-left: 12px; background: #e05a5a; }
+    .edit { margin-left: 8px; background: #6c757d; }
+    .tip { color: #c00; font-size: 14px; min-height: 20px; }
+    .tip.ok { color: #2a8a3e; }
+    .filters { margin: 12px 0; }
+    .filters button { margin-right: 8px; background: #eee; color: #333; }
+    .filters button.active { background: #2d7ff9; color: #fff; }
+    #search { width: 100%; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>我的图书收藏</h1>
+  <form id="add-form">
+    <div class="form-row">
+      <input type="text" id="book-title" placeholder="书名">
+      <input type="text" id="book-author" placeholder="作者">
+      <input type="number" id="book-rating" placeholder="评分1-5" min="1" max="5" step="1">
+      <button type="submit">添加</button>
+    </div>
+  </form>
+  <p class="tip" id="tip"></p>
+  <ul id="book-list"></ul>
+  <script src="app.js"></script>
+</body>
+</html>
