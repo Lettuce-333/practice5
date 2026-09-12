@@ -38,6 +38,12 @@
       <button type="submit">添加</button>
     </div>
   </form>
+    <input type="text" id="search" placeholder="搜索书名或作者…">
+  <div class="filters">
+    <button type="button" data-filter="all" class="active">全部</button>
+    <button type="button" data-filter="active">未读</button>
+    <button type="button" data-filter="done">已读</button>
+  </div>
   <p class="tip" id="tip"></p>
   <ul id="book-list"></ul>
   <script src="app.js"></script>
