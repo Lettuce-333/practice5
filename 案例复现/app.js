@@ -2,7 +2,8 @@ const form = document.querySelector('#add-form');
 const input = document.querySelector('#task-input');
 const tip = document.querySelector('#tip');
 const list = document.querySelector('#task-list');
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+const save = () => localStorage.setItem('tasks', JSON.stringify(tasks));
 const filters = document.querySelector('.filters');
 let currentFilter = 'all';
 const render = () => {
@@ -37,6 +38,7 @@ form.addEventListener('submit', (e) => {
         return;
     }
     tasks.push({ text: text, done: false });
+    save();
     tip.textContent = '';
     input.value = '';
     render();
